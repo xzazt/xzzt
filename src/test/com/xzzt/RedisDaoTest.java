@@ -1,6 +1,7 @@
 package com.xzzt;
 
 import com.xzzt.dao.RedisDao;
+import com.xzzt.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,16 @@ public class RedisDaoTest{
     @Test
     public void tt1(){
         //String andSet = redisDao.getAndSet("xt", "aaa");
-        redisDao.set("xzzt","xzzt");
-        //String xz = redisDao.get("");
-        //System.out.println(xz);
+        User u = new User();
+        u.setUserName("111");
+        u.setPassWord("2222");
+        //redisDao.set("xzzt",u);
+        String xz = (String) redisDao.get("aaa");
+        System.out.println(xz);
         //String andSet = redisDao.getAndSet("xzzt", "aaa");
         //System.out.println(andSet);
         //redisDao.delete("xzzt");
+        //User xzzt = (User) redisDao.get("xzzt");
+        //System.out.println(xzzt.toString());
     }
 }
